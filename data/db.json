@@ -1,0 +1,77 @@
+{
+  "challenges": [
+    {
+      "author": "Saran Govind",
+      "title": "Social Media and Planning",
+      "body": "This is a research challenge. To what extend can we use social media or other social or public data to improve planning of consumer deliveries (as a result of exponential growth of online orders and deliveries) ? Which data sources seems the most suitable for this?",
+      "votes": 2,
+      "createdOn": 1629346530775,
+      "tags": [
+        "feature",
+        "tech"
+      ],
+      "id": 1
+    },
+    {
+      "author": "Saravana G",
+      "title": "Cargo Hubs Analysis",
+      "body": "Based on a number of DC locations and associated in/outbound numbers per time-slot per day, perform thorough data analysis and define improvement possibilities. Data to be used is data on inbound and outbound cargoes in combination with traffic state data (either historic or real time).Based on a number of DC locations and associated in/outbound numbers per time-slot per day, perform thorough data analysis and define improvement possibilities. Data to be used is data on inbound and outbound cargoes in combination with traffic state data (either historic or real time).",
+      "votes": 2,
+      "createdOn": 1629717745425,
+      "tags": [
+        "feature",
+        "tech"
+      ],
+      "id": 2
+    },
+    {
+      "author": "Ashwin Kumar",
+      "title": "Epidemic Monitor",
+      "body": "Epidemic Monitor is an application for crowdsourcing epidemic data and using prior trends to predict the spread of the disease in current time and in future cases using historical data trained using state of the art Neural Network.",
+      "votes": 4,
+      "createdOn": 1613028037804,
+      "tags": [
+        "feature",
+        "tech"
+      ],
+      "id": 3
+    },
+    {
+      "author": "Saravana Kumar",
+      "title": "Cargo Hubs Analysis",
+      "body": "Based on a number of DC locations and associated in/outbound numbers per time-slot per day, perform thorough data analysis and define improvement possibilities. Data to be used is data on inbound and outbound cargoes in combination with traffic state data (either historic or real time).",
+      "votes": 2,
+      "createdOn": 1626244267838,
+      "tags": [
+        "feature",
+        "tech"
+      ],
+      "id": 4
+    },
+    {
+      "author": "Saravana Kumar",
+      "title": "Cargo Hubs Analysis",
+      "body": "Based on a number of DC locations and associated in/outbound numbers per time-slot per day, perform thorough data analysis and define improvement possibilities. Data to be used is data on inbound and outbound cargoes in combination with traffic state data (either historic or real time).",
+      "votes": 2,
+      "createdOn": 1629717745425,
+      "tags": [
+        "feature",
+        "tech"
+      ],
+      "id": 5
+    },
+    {
+      "title": "Test Title",
+      "body": "Test description",
+      "tags": [
+        "test",
+        " check"
+      ],
+      "author": "Test Author",
+      "votes": 3,
+      "createdOn": 1630086850197,
+      "id": 6
+    }
+  ],
+  "users": []
+}
