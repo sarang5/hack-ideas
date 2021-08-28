@@ -68,9 +68,20 @@
         " check"
       ],
       "author": "Test Author",
-      "votes": 3,
+      "votes": 4,
       "createdOn": 1630086850197,
       "id": 6
+    },
+    {
+      "title": "Test new",
+      "body": "fdvndvd ddvdovdsdio",
+      "tags": [
+        "social"
+      ],
+      "author": "Test Author",
+      "votes": 2,
+      "createdOn": 1630159002378,
+      "id": 7
     }
   ],
   "users": []

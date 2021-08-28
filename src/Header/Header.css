@@ -1,0 +1,40 @@
+.main-header {
+    background: #f3f7f7;
+    padding: 1em;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+  }
+  
+  .main-header .action-btns span {
+    margin-right: 15px;
+    cursor: pointer;
+  }
+  
+  .main-header .action-btns button, .footer button {
+    padding: 0.6em 0.9em;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    background: #156B87;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .main-header .action-btns .create-btn:hover, .footer button.save-btn:hover {
+    background: #267871
+  }
+  
+  .main-header .action-btns .logout-btn, .footer button.close-btn {
+    background: #D3D5D6;
+  }
+  
+  .main-header .action-btns .logout-btn:hover, .footer button.close-btn:hover {
+    background: #c1c1c1;
+  }

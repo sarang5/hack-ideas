@@ -1,17 +1,19 @@
 import { useState, useEffect, useRef } from 'react';
 import Tile from "./Tile";
-import CreateModal from "./CreateModal";
-import Sorting from "./Sorting";
+import Sorting from "./Sort/Sorting";
+import Header from './Header/Header';
+import Search from './Search/Search';
 
 const HomePage = () => {
 
-    const docBody = document.body;
-    const searchRef = useRef('');
-    const [showClose, setShowClose] = useState(false);
-    const [openModal, setOpenModal] = useState(false);
+    const searchRef = useRef();
+    const sortRef = useRef();
     const [user, setUser] = useState('Saran');
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(false);
     const [challenges, setChallenges] = useState(null);
-    const [sortOption, setSortOption] = useState('createdOn');
+    const [disableSort, setDisableSort] = useState(true);
+    const errorMsg = 'Something wrong, please come back later...';
 
     const handleUpvoteClick = async (e, id) => {
         e.preventDefault();
@@ -24,43 +26,6 @@ const HomePage = () => {
         });
 
         getChallenges();    // TODO: remove - move vote to separate schema and have separate component
-    };
-
-    const clearSearch = () => {
-        searchRef.current.value = '';
-        setShowClose(false);
-        getChallenges();
-    };
-
-    const performSearch = (e) => {
-        setShowClose(searchRef.current.value.trim() ? true : false);
-        getChallenges(searchRef.current.value.trim());
-    };
-
-    const debounce = (fn, delay) => {
-        let timer;
-        return (...args) =>  {
-            clearTimeout(timer);
-            timer = setTimeout(() => fn.apply(this, args), delay);
-        }
-    };
-
-    const updateBodyScroll = (hide) => {
-        docBody.style.overflow = (hide) ? 'hidden': 'auto';
-    };
-
-    const closeModal = () => {
-        setOpenModal(false); 
-        updateBodyScroll(false);
-    };
-
-    const handleSortChange = (e) => {
-        // console.log(e.target.value);
-        // console.log(sortOption)
-        // const val = e.target.value;
-        // setSortOption(val);
-        setSortOption(e.target.value);
-        getChallenges();
     };
 
     const createChallenge = async (data) => {
@@ -77,54 +42,48 @@ const HomePage = () => {
             headers: { 'Content-Type': 'application/json' }
         });
 
-        closeModal();
+        getChallenges();
     };
 
-    const getChallenges = async (searchTerm) => {
-        console.log(sortOption)
+    const getChallenges = async (searchTerm = searchRef.current.value(), sort = sortRef.current.value()) => {
         let uri = 'http://localhost:8000/challenges';
-        if (sortOption) uri += `?_sort=${sortOption}&_order=desc`;
+        if (sort) uri += `?_sort=${sort}&_order=desc`;
         if (searchTerm) uri += `&q=${searchTerm}`;
         try {
             const res = await fetch(uri);
+            if (!res.ok) {
+                throw Error('error in fetching challenges');
+            }
+
             const data = await res.json();
-            setChallenges(data);
+            setDisableSort(!(data.length));
+            setChallenges(data || []);
+            setIsLoading(false);
         } catch (err) {
-            console.error("Error in fetching challenges " + err);
+            setIsLoading(false);
+            setError(errorMsg);
+            // console.error("Error in fetching challenges " + err);
         }
     };
 
     useEffect(() => {
-        searchRef.current.value = '';
+        searchRef.current.clear();
         getChallenges();
     }, []);
     
     return (
         <div className="homepage">
-            <div className="header">
-                <div className="welcome-text">Welcome {user},</div>
-                <div className="action-btns">
-                    <span>
-                        <button className="create-btn" onClick={() => {setOpenModal(true); updateBodyScroll(true);}}>Create</button>
-                        <CreateModal open={openModal} onClose={closeModal} onCreate={createChallenge}></CreateModal>
-                    </span>
-                    <span>
-                        <button className="logout-btn">Logout</button>
-                    </span>
-                </div>
-            </div>
+            <Header user={user} handleCreate={createChallenge}></Header>
             <div className="main-container">
-                <div className="search-container">
-                    <input ref={searchRef} type="text" placeholder="Search Challenges" onKeyUp={debounce(performSearch, 700)}></input>
-                    {showClose && <span className="clear-search" onClick={clearSearch}>&times;</span>}
-
-                    <Sorting value={sortOption} handleChange={handleSortChange}></Sorting>
-                </div>
+                {isLoading && <div className="loader"></div>}
+                {error && <div className="error-container">{error}</div>}
+                <Search ref={searchRef} handleSearch={data => getChallenges(data.searchTerm)}></Search>
+                <Sorting ref={sortRef} disable={disableSort} handleChange={data => getChallenges()}></Sorting>
                 {challenges && <div className="challenges-container">
                     {challenges.map((challenge, index) => (
                         <Tile key={`tile${index}`} data={challenge} handleUpvote={handleUpvoteClick} />
                     ))}
-                    {!challenges.length && <div className="no-challenges">No challenges exist...</div>}
+                    {!challenges.length && <div className="no-challenges">Oops, no challenges exist, Click 'Create' to add one.</div>}
                 </div>}
             </div>
         </div>

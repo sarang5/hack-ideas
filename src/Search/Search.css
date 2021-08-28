@@ -1,0 +1,28 @@
+.search-container {
+    width: 100%;
+    text-align: center;
+    margin: 2.5em auto;
+    position: relative;
+  }
+  
+  .search-container input {
+    width: 50%;
+    height: 40px;
+    font-size: 1.2em;
+    min-width: 300px;
+    border-radius: 5px;
+    padding: 0.5em;
+    border: none;
+  }
+  
+  .search-container .clear-search {
+    position: absolute;
+    font-size: 26px;
+    cursor: pointer;
+    left: 74%;
+    transform: translateX(-50%);
+  }
+  
+  .search-container input::placeholder {
+    color: grey;
+  }
