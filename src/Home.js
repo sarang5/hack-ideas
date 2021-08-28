@@ -15,6 +15,11 @@ const HomePage = () => {
     const [disableSort, setDisableSort] = useState(true);
     const errorMsg = 'Something wrong, please come back later...';
 
+    const logout = () => {
+        sessionStorage.removeItem('hackUser');
+        window.location.href = "/login";
+    }
+
     const handleUpvoteClick = async (e, id) => {
         e.preventDefault();
         const data = challenges.filter(challenge => challenge.id === id)[0];
@@ -73,7 +78,7 @@ const HomePage = () => {
     
     return (
         <div className="homepage">
-            <Header user={user} handleCreate={createChallenge}></Header>
+            <Header user={user} handleCreate={createChallenge} handleLogout={logout}></Header>
             <div className="main-container">
                 {isLoading && <div className="loader"></div>}
                 {error && <div className="error-container">{error}</div>}

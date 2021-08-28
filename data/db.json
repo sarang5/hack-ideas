@@ -7,82 +7,78 @@
       "votes": 2,
       "createdOn": 1629346530775,
       "tags": [
-        "feature",
-        "tech"
+        "R&D",
+        "social"
       ],
+      "empId": "E2018121",
       "id": 1
     },
     {
-      "author": "Saravana G",
-      "title": "Cargo Hubs Analysis",
-      "body": "Based on a number of DC locations and associated in/outbound numbers per time-slot per day, perform thorough data analysis and define improvement possibilities. Data to be used is data on inbound and outbound cargoes in combination with traffic state data (either historic or real time).Based on a number of DC locations and associated in/outbound numbers per time-slot per day, perform thorough data analysis and define improvement possibilities. Data to be used is data on inbound and outbound cargoes in combination with traffic state data (either historic or real time).",
-      "votes": 2,
+      "author": "Saravana Kumar",
+      "title": "Virtual health assistant",
+      "body": "Develop a device that can help people living with chronic medical conditions to regularly monitor their health parameters and vitals in order to live a healthy life. The device should monitor health conditions like diabetes and should alert family members and relatives if the patient’s health deteriorates. The device should also send timely reminders to the patient to take medication.",
+      "votes": 3,
       "createdOn": 1629717745425,
       "tags": [
-        "feature",
+        "health",
         "tech"
       ],
+      "empId": "E2018101",
       "id": 2
     },
     {
       "author": "Ashwin Kumar",
       "title": "Epidemic Monitor",
       "body": "Epidemic Monitor is an application for crowdsourcing epidemic data and using prior trends to predict the spread of the disease in current time and in future cases using historical data trained using state of the art Neural Network.",
-      "votes": 4,
+      "votes": 5,
       "createdOn": 1613028037804,
       "tags": [
-        "feature",
+        "health",
         "tech"
       ],
+      "empId": "E2019212",
       "id": 3
     },
     {
-      "author": "Saravana Kumar",
-      "title": "Cargo Hubs Analysis",
-      "body": "Based on a number of DC locations and associated in/outbound numbers per time-slot per day, perform thorough data analysis and define improvement possibilities. Data to be used is data on inbound and outbound cargoes in combination with traffic state data (either historic or real time).",
+      "author": "Nyra",
+      "title": "Remote patient examination",
+      "body": "Build a mobile app that enables doctors to gain real-time access to a patient’s vital signs from anywhere in the world. The mobile solution should allow doctors to gauge a patient’s condition to determine whether hospitalization is necessary. The solution can also provide general medical assistance and will be especially useful in cases of emergencies.",
       "votes": 2,
       "createdOn": 1626244267838,
       "tags": [
-        "feature",
-        "tech"
+        "mobile",
+        "tech",
+        "health"
       ],
       "id": 4
     },
     {
       "author": "Saravana Kumar",
-      "title": "Cargo Hubs Analysis",
-      "body": "Based on a number of DC locations and associated in/outbound numbers per time-slot per day, perform thorough data analysis and define improvement possibilities. Data to be used is data on inbound and outbound cargoes in combination with traffic state data (either historic or real time).",
-      "votes": 2,
-      "createdOn": 1629717745425,
+      "title": "Autonomous Drones",
+      "body": "Build an AI-powered drone camera, program it with object tracking data from proximity sensors, GPS sensors, and motion sensors. With the autonomous drone, people won’t need to pilot the drone camera. This will help people to take professional vacation photos and videos, this will especially be helpful for solo travelers.",
+      "votes": 4,
+      "createdOn": 1628585773169,
       "tags": [
         "feature",
-        "tech"
+        "AI/ML",
+        "travellers"
       ],
+      "empId": "E2018101",
       "id": 5
-    },
-    {
-      "title": "Test Title",
-      "body": "Test description",
-      "tags": [
-        "test",
-        " check"
-      ],
-      "author": "Test Author",
-      "votes": 4,
-      "createdOn": 1630086850197,
-      "id": 6
-    },
-    {
-      "title": "Test new",
-      "body": "fdvndvd ddvdovdsdio",
-      "tags": [
-        "social"
-      ],
-      "author": "Test Author",
-      "votes": 2,
-      "createdOn": 1630159002378,
-      "id": 7
     }
   ],
-  "users": []
+  "users": [
+    {
+      "id": "E2018101",
+      "name": "Saravana Kumar"
+    },
+    {
+      "id": "E2018121",
+      "name": "Saran Govind"
+    },
+    {
+      "id": "E2019212",
+      "name": "Ashwin Kumar"
+    }
+  ]
 }

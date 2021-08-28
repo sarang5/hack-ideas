@@ -2,7 +2,7 @@ import { useState } from 'react';
 import CreateModal from '../CreateModal/CreateModal';
 import './Header.css';
 
-const Header = ({user, handleCreate}) => {
+const Header = ({ user, handleCreate, handleLogout }) => {
     const docBody = document.body;
     const [openModal, setOpenModal] = useState(false);
 
@@ -24,7 +24,7 @@ const Header = ({user, handleCreate}) => {
                     <CreateModal open={openModal} onClose={closeModal} onCreate={(data) =>{handleCreate(data); closeModal();}}></CreateModal>
                 </span>
                 <span>
-                    <button className="logout-btn">Logout</button>
+                    <button className="logout-btn" onClick={handleLogout}>Logout</button>
                 </span>
             </div>
         </div>
