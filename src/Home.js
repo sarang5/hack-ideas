@@ -8,7 +8,6 @@ const HomePage = () => {
 
     const searchRef = useRef();
     const sortRef = useRef();
-    const [user, setUser] = useState('Saran');
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(false);
     const [challenges, setChallenges] = useState(null);
@@ -18,7 +17,7 @@ const HomePage = () => {
     const logout = () => {
         sessionStorage.removeItem('hackUser');
         window.location.href = "/login";
-    }
+    };
 
     const handleUpvoteClick = async (e, id) => {
         e.preventDefault();
@@ -78,7 +77,7 @@ const HomePage = () => {
     
     return (
         <div className="homepage">
-            <Header user={user} handleCreate={createChallenge} handleLogout={logout}></Header>
+            <Header handleCreate={createChallenge} handleLogout={logout}></Header>
             <div className="main-container">
                 {isLoading && <div className="loader"></div>}
                 {error && <div className="error-container">{error}</div>}

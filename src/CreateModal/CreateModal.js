@@ -16,15 +16,15 @@ const CreateModal = ({ open, onClose, onCreate }) => {
                     <form autoComplete="false" ref={formRef} id="create-form">
                         <div className="section">
                             <label>Title</label>
-                            <textarea name="title"></textarea>
+                            <textarea name="title" required></textarea>
                         </div>
                         <div className="section">
                             <label>Description</label>
-                            <textarea rows="5" name="description"></textarea>
+                            <textarea rows="5" name="description" required></textarea>
                         </div>
                         <div className="section">
                             <label>Tags</label>
-                            <textarea rows="1" name="tags" placeholder="Add comma separated tags..."></textarea>
+                            <textarea rows="1" name="tags" placeholder="Add comma separated tags..." required></textarea>
                         </div>
                     </form>
                     <div className="footer">

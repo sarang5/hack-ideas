@@ -2,5 +2,71 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    padding: 10em;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2em;
+}
+
+.login .container {
+    width: 30%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f3f7f7;
+    padding: 2em;
+    flex-direction: column;
+    min-width: 200px;
+}
+
+.login .container input {
+    padding: 0.8em;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.login .container input.error {
+    border: 1px solid red;
+}
+
+.login .container .error-text {
+    font-size: 11px;
+    padding-left: 5px;
+    margin: 0;
+    color: red;
+    font-weight: 500;
+}
+
+.login .container button {
+    padding: 0.5em 0.9em;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    background: #156B87;
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.login .container button:hover {
+    background-color: #267871;
+}
+
+.container .user-input {
+    min-width: 100px;
+    margin-top: 2em;
+}
+
+.container .user-label {
+    font-size: 14px;
+    color: gray;
+    font-weight: bold;
+    position: relative;
+    bottom: 5px;
 }
