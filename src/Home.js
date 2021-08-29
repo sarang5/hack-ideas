@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import Tile from "./Tile";
+import Tile from "./Tile/Tile";
 import Sorting from "./Sort/Sorting";
 import Header from './Header/Header';
 import Search from './Search/Search';

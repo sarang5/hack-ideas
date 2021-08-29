@@ -1,3 +1,5 @@
+import './Tile.css';
+
 const Tile = ({ data: { id, author, title, body, tags, votes, createdOn }, handleUpvote }) => {
 
     createdOn = new Date(createdOn).toDateString();
@@ -35,9 +37,6 @@ const Tile = ({ data: { id, author, title, body, tags, votes, createdOn }, handl
             </div>
             <div className="footer">
                 <div className="created-date">Created on <strong>{createdOn}</strong></div>
-                {/* <span className="upvote">
-                    <button onClick={() => handleUpvote(id)}>Like</button>
-                </span> */}
             </div>
         </div>
     );

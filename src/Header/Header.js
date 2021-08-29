@@ -3,7 +3,6 @@ import CreateModal from '../CreateModal/CreateModal';
 import './Header.css';
 
 const Header = ({ handleCreate, handleLogout }) => {
-    console.log('--gg')
     const docBody = document.body;
     const [openModal, setOpenModal] = useState(false);
 
