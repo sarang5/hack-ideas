@@ -4,6 +4,16 @@ import './CreateModal.css';
 
 const CreateModal = ({ open, onClose, onCreate }) => {
     const formRef = useRef();
+    // const [disableSave, setDisableSave]
+    const handleSubmit = (e) => {
+        const {title, description, tags} = formRef.current;
+        e.preventDefault();
+        onCreate({
+            title: title.value,
+            body: description.value,
+            tags: tags.value.split(",")
+        });
+    }
 
     if (open) {
         return ReactDom.createPortal(
@@ -13,7 +23,7 @@ const CreateModal = ({ open, onClose, onCreate }) => {
                     <div className="header">
                         <h3>Create Challange</h3>
                     </div>
-                    <form autoComplete="false" ref={formRef} id="create-form">
+                    <form onSubmit={handleSubmit} autoComplete="false" ref={formRef} id="create-form">
                         <div className="section">
                             <label>Title</label>
                             <textarea name="title" required></textarea>
@@ -26,15 +36,11 @@ const CreateModal = ({ open, onClose, onCreate }) => {
                             <label>Tags</label>
                             <textarea rows="1" name="tags" placeholder="Add comma separated tags..." required></textarea>
                         </div>
+                        <div className="footer">
+                            <button className="close-btn" onClick={onClose}>Close</button>
+                            <button className="save-btn">Save</button>
+                        </div>
                     </form>
-                    <div className="footer">
-                        <button className="close-btn" onClick={onClose}>Close</button>
-                        <button className="save-btn" onClick={() => onCreate({ 
-                            title: formRef.current.title.value, 
-                            body: formRef.current.description.value, 
-                            tags: formRef.current.tags.value.split(",")
-                        })}>Save</button>
-                    </div>
                 </div>
             </div>, 
             document.body

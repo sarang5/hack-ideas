@@ -3,9 +3,10 @@ import Tile from "./Tile/Tile";
 import Sorting from "./Sort/Sorting";
 import Header from './Header/Header';
 import Search from './Search/Search';
+import { useLocation } from "react-router-dom";
 
 const HomePage = () => {
-
+    const location = useLocation();
     const searchRef = useRef();
     const sortRef = useRef();
     const [isLoading, setIsLoading] = useState(true);
@@ -37,6 +38,7 @@ const HomePage = () => {
             ...data,
             author: 'Test Author',
             votes: 0,
+            empId: location.state.user.id,
             createdOn: Date.now()
         };
 
@@ -66,7 +68,6 @@ const HomePage = () => {
         } catch (err) {
             setIsLoading(false);
             setError(errorMsg);
-            // console.error("Error in fetching challenges " + err);
         }
     };
 
@@ -77,7 +78,7 @@ const HomePage = () => {
     
     return (
         <div className="homepage">
-            <Header handleCreate={createChallenge} handleLogout={logout}></Header>
+            <Header user={location.state.user.name} handleCreate={createChallenge} handleLogout={logout}></Header>
             <div className="main-container">
                 {isLoading && <div className="loader"></div>}
                 {error && <div className="error-container">{error}</div>}

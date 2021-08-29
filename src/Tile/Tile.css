@@ -17,6 +17,11 @@
   .tile-container .header .left-section {
     width: 85%;
   }
+
+  .tile-container .header .right-section {
+    display: flex;
+    align-items: flex-start;
+  }
   
   .tile-container .header .right-section a {
     font-size: 12px;

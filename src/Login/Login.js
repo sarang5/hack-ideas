@@ -1,10 +1,11 @@
 import { useRef, useState } from "react";
 import './Login.css';
-import {Link} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
     const empRef = useRef();
     const [error, setError] = useState(false);
+    const history = useHistory();
 
     const loginUser = async () => {
         try {
@@ -16,9 +17,11 @@ const Login = () => {
 
             const data = await res.json();
             sessionStorage.setItem('hackUser', JSON.stringify(data));
-            window.location.href = "/";
+            history.push({
+                pathname: "/",
+                state: { user: data }
+            });
         } catch (err) {
-            console.log(empRef.current);
             setError(true);
             console.error('Employee id does not exist, cannot login ' + err);
         }
