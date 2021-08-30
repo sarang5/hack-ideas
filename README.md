@@ -10,7 +10,7 @@ In the project directory, run
 
 This will install all the dependencies required for the application to start mentioned in the package.json
 
-### `npm start`
+### `npm run start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -28,6 +28,11 @@ Use employee ids from the list [E2018101, E2018121, E2019212, E2020250]
 Employees can perform the below operations in the Home page after successful login
 [Create, Search, Sort(Created Date and Votes), Upvote]
 
+## Run Tests
+### `npm run test`
+
+Runs the available tests.
+
 ## Future Ideas
 1. UI
 Allow users to see only their blogs
@@ -36,3 +41,4 @@ Sorting through UI
 
 2. Service
 Separate `Votes` from challenges REST Service
+
