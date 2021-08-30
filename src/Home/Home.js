@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import Tile from "./Tile/Tile";
-import Sorting from "./Sort/Sorting";
-import Header from './Header/Header';
-import Search from './Search/Search';
+import Tile from "../Tile/Tile";
+import Sorting from "../Sort/Sorting";
+import Header from '../Header/Header';
+import Search from '../Search/Search';
 import { useLocation } from "react-router-dom";
 
 const HomePage = () => {
@@ -52,6 +52,7 @@ const HomePage = () => {
     };
 
     const getChallenges = async (searchTerm = searchRef.current.value(), sort = sortRef.current.value()) => {
+        setIsLoading(true);
         let uri = 'http://localhost:8000/challenges';
         if (sort) uri += `?_sort=${sort}&_order=desc`;
         if (searchTerm) uri += `&q=${searchTerm}`;

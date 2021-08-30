@@ -1,4 +1,4 @@
-import Home from './Home';
+import Home from './Home/Home';
 import Login from './Login/Login';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
