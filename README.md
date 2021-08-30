@@ -34,11 +34,11 @@ Employees can perform the below operations in the Home page after successful log
 Runs the available tests.
 
 ## Future Ideas
-1. UI
-Allow users to see only their blogs
-Option to Delete the blog
-Sorting through UI
+1. UI\
+Allow users to see only their blogs\
+Option to Delete the blog\
+Sorting through UI\
 
-2. Service
+2. Service\
 Separate `Votes` from challenges REST Service
 
